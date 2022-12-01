@@ -86,8 +86,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 align-items-center" style="background-color: orange">
-                    <img src="" alt="">
+                <div class="col-lg-6 col-md-6 text-center" style="background-color: orange">
+                    <img class="img-fluid rounded mt-5" src="{{ asset('img/profile.jpg') }}" alt="person_about" width="50%" height="50%">
+                    <h2 class="text-center">NAME PERSON ABOUT</h2>
                 </div>
             </div>
         </section>
