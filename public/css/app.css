@@ -1,0 +1,22 @@
+/* Google fonts import link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* principal.blade.php -- h1, p */
+.titulo_h1{
+    font-weight: 700;
+}
+.text_1{
+    font-weight: 500;
+}
+
+/* principal.blade.php -- h2, p */
+.titulo_h2{
+    font-weight: 600;
+}
