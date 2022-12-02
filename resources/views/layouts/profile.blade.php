@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Empresa - @yield('title')</title>
+    <!-- Archive CSS Link --> 
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <!-- Bootstrap CSS Link --> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- Boxicons CDN Link -->
@@ -23,7 +25,7 @@
                     <!-- Dashboard -->
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">
+                            <a class="btn btn-outline-light mx-2" aria-current="page" autocomplete="off" href="#">
                                 <i class='bx bx-home-alt'></i>
                                 Dashboard
                             </a>
@@ -31,21 +33,16 @@
                     </ul>
                     <!-- Dashboard -->
 
-                    <!-- Management -->
+                    <!-- Inventory -->
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class='bx bx-briefcase-alt'></i>
-                                Management
+                            <a class="nav-link dropdown mx-2" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class='bx bx-task'></i>
+                                Inventory
                                 <i class='bx bxs-chevron-down' ></i>
                             </a>
+
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li>
-                                    <a class="dropdown-item" href="#">
-                                        <i class='bx bx-spreadsheet'></i>
-                                        <span class="ms-2">Inventory</span> 
-                                    </a>
-                                </li>
                                 <li>
                                     <a class="dropdown-item" href="#">
                                         <i class='bx bx-category-alt'></i>
@@ -54,7 +51,7 @@
                                 </li>
                                 <li>
                                     <a class="dropdown-item" href="#">
-                                        <i class='bx bxs-package'></i>
+                                        <i class='bx bx-box'></i>
                                         <span class="ms-2">Products</span> 
                                     </a>
                                 </li>
@@ -67,36 +64,51 @@
                             </ul>
                         </li>                            
                     </ul>
-                    <!-- Management -->
+                    <!-- Inventory -->
 
                     <!-- Analytics -->
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link mx-2" href="#">
                                 <i class='bx bx-line-chart'></i>
                                 Analytics
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class='bx bx-message'></i>
-                                Messages
+                            <a class="nav-link mx-2" href="#">
+                                <i class='bx bx-bar-chart-square'></i>
+                                Reports
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link mx-2" href="#">
                                 <i class='bx bx-archive'></i>
                                 Archives
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class='bx bx-cart'></i>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown mx-2" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class='bx bx-cart-alt'></i>
                                 Orders
+                                <i class='bx bxs-chevron-down' ></i>
                             </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class='bx bx-cart-add'></i>
+                                        <span class="ms-2">Purchase Orders</span> 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class='bx bx-cart'></i>
+                                        <span class="ms-2">Sales Orders</span> 
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link mx-2" href="#">
                                 <i class='bx bx-user'></i>
                                 Clients
                             </a>
@@ -160,7 +172,7 @@
 
     <!------------Menu principal------------>
     <main>
-        <section>
+        <section class="container-fluid">
             @yield('content')
         </section>
     </main>
@@ -169,16 +181,10 @@
 
 
     <!------------Footer------------>
-    <footer class="bg-dark text-center text-lg-start text-white">            
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-            @yield('copyright')
-            © {{ now()->year }} Copyright:
-            <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-        </div>
-    </footer>
     <!------------Footer------------>
 
-
+    <!-- Charts.js CDN Link -->   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.0.1/chart.min.js"></script>
     <!-- Fontawesome CDN Link -->    
     <script src="https://kit.fontawesome.com/0c9b1b07bb.js" crossorigin="anonymous"></script>
     <!-- Bootstrap JS Link --> 
