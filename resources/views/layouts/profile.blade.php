@@ -183,12 +183,17 @@
     <!------------Footer------------>
     <!------------Footer------------>
 
+    
     <!-- Charts.js CDN Link -->   
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.0.1/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Fontawesome CDN Link -->    
     <script src="https://kit.fontawesome.com/0c9b1b07bb.js" crossorigin="anonymous"></script>
     <!-- Bootstrap JS Link --> 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js" integrity="sha384-q9CRHqZndzlxGLOj+xrdLDJa9ittGte1NksRmgJKeCV9DrM7Kz868XYqsKWPpAmn" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    
+    <!-- Aqui se agrega el codigo script para la grafica.
+    NOTA: Poner <script>CODIGO AQUI</script> por que no esta referenciado --> 
+    @yield('scripts')
 </body>
 </html>
