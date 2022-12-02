@@ -12,144 +12,168 @@
 </head>
 <body>
     <!------------Header------------>
-    {{-- <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow p-3 mb-2 bg-body rounded">
-            <div class="container-fluid">
-                <a class="navbar-brand col-md-3 fw-bolder fs-4 text-uppercase text-center" href="#">
-                    <img class="me-3" src="{{ asset('img/user.svg') }}" alt="" width="58" height="58">
-                    Empresa                
-                </a>
-                
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Cuando le usuario este autenticado nos mostrara las opciones salir con este helper auth -->
-                    @auth
-                        <div class="col-md-12 text-end fw-bold">
-                            <form action="{{ route('logout') }}" method="POST">
-                                @csrf
-
-                                    <div class="d-inline dropdown">
-                                        
-                                        <a class="navbar-brand me-5" role="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                            
-                                          <i class='bx bxs-user-detail fs-1'></i>
-                                        </a>
-                                    
-                                        <ul class="dropdown-menu text-center" aria-labelledby="dropdownMenuLink">
-                                            <li><a class="dropdown-item text-start" href="#">Account</a></li>
-                                            <li><a class="dropdown-item text-start" href="#">Another action</a></li>
-                                            <li><a class="dropdown-item text-start" href="#">Something else here</a></li>
-                                            <li><hr class="dropdown-divider">
-                                                <small>NOMBRE CLIENTE</small> 
-                                            </li>
-                                            <li class="pt-3">
-                                                <img src="{{ asset('img/user.svg') }}" alt="" width="60px" height="60px">
-                                                <button type="submit" class="btn btn-outline-dark btn-sm ms-2 text-uppercase fw-bolder rounded">
-                                                    Salir
-                                                </button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                            </form>
-                        </div>
-                    @endauth
-
-
-                    <!-- Cuando le usuario no este autenticado nos mostrara las opciones de login y crear cuenta con este helper guest -->
-                    @guest
-                        <div class="col-md-12">
-                            <div class="text-end">
-                                <ul class="navbar-nav col-md-9 ms-5 fw-bolder">
-    
-                                    <li><a href="#" class="nav-link px-3 text-center">Inicio</a></li>
-                                    <li><a href="#" class="nav-link px-3 text-center">Servicios</a></li>
-                                    <li><a href="#" class="nav-link px-3 text-center">Pricing</a></li>
-                                    <li><a href="#" class="nav-link px-3 text-center">FAQs</a></li>
-                                    <li><a href="#" class="nav-link px-3 text-center">Nosotros</a></li>
-                                </ul>
-                                <a href="{{ route('login') }}">
-                                    <button class="btn btn-outline-dark btn-sm text-uppercase fw-bolder me-2" type="button">Login</button>
-                                </a>
-                                <a href="{{ route('register') }}">
-                                    <button class="btn btn-outline-dark btn-sm text-uppercase fw-bolder" type="button">Crear Cuenta</button>
-                                </a>
-                            </div>
-                            
-                        </div>
-                        
-                        
-                    @endguest
-                </div>
-            </div>
-        </nav>
-    </header> --}}
-
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow p-3 mb-2 bg-body rounded">
-            <div class="container-fluid me-5">
-                <a class="navbar-brand col-lg-4 text-start fw-bolder fs-4 text-uppercase" href="#">
-                    <img class="me-3" src="{{ asset('img/user.svg') }}" alt="" width="58" height="58">
-                    Empresa
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Cuando le usuario este autenticado nos mostrara las opciones salir con este helper auth -->
-                    @auth
-                        
-                        <div class="col-md-12 text-end">
-                            <form action="{{ route('logout') }}" method="POST">
-                                @csrf
+                    <!-- Dashboard -->
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">
+                                <i class='bx bx-home-alt'></i>
+                                Dashboard
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- Dashboard -->
 
-                                <button type="submit" class="btn btn-outline-dark btn-sm me-3 text-uppercase fw-bolder rounded">Salir</button>
-                            </form>
-                        </div>
-                    @endauth
-
-
-                    <!-- Cuando le usuario no este autenticado nos mostrara las opciones de login y crear cuenta con este helper guest -->
-                    @guest
-                        <div class="col-md-12 text-end align-items-center">
-                            <ul class="navbar-nav col-md-12 mb-2 fw-bolder">
-
-                                <li><a href="#" class="nav-link px-3">Inicio</a></li>
-                                <li><a href="#" class="nav-link px-3">Servicios</a></li>
-                                <li><a href="#" class="nav-link px-3">Pricing</a></li>
-                                <li><a href="#" class="nav-link px-3">FAQs</a></li>
-                                <li><a href="#" class="nav-link px-3">Nosotros</a></li>
+                    <!-- Management -->
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class='bx bx-briefcase-alt'></i>
+                                Management
+                                <i class='bx bxs-chevron-down' ></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class='bx bx-spreadsheet'></i>
+                                        <span class="ms-2">Inventory</span> 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class='bx bx-category-alt'></i>
+                                        <span class="ms-2">Categories</span> 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class='bx bxs-package'></i>
+                                        <span class="ms-2">Products</span> 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class='bx bx-check-circle'></i>
+                                        <span class="ms-2">Services</span> 
+                                    </a>
+                                </li>
                             </ul>
-                            
-                            <a href="{{route('login')}}">
-                                <button class="btn btn-outline-dark btn-sm text-uppercase fw-bolder me-2" type="button">Login</button>
+                        </li>                            
+                    </ul>
+                    <!-- Management -->
+
+                    <!-- Analytics -->
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class='bx bx-line-chart'></i>
+                                Analytics
                             </a>
-                            <a href="{{ route('register') }}">
-                                <button class="btn btn-outline-dark btn-sm text-uppercase fw-bolder" type="button">Crear Cuenta</button>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class='bx bx-message'></i>
+                                Messages
                             </a>
-                        </div>
-                    @endguest
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class='bx bx-archive'></i>
+                                Archives
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class='bx bx-cart'></i>
+                                Orders
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class='bx bx-user'></i>
+                                Clients
+                            </a>
+                        </li> 
+                    </ul>
+                    <!-- Clients -->
+
+                    <!-- Profile -->
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropstart">
+                            <a class="nav-link dropdown" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class='bx bxs-user-circle fs-1'></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class='bx bx-cog'></i>
+                                        <span class="ms-2">Settings</span> 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class='bx bx-user'></i>
+                                        <span class="ms-2">Users</span> 
+                                    </a>
+                                </li>                            
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class='bx bx-task'></i>
+                                        <span class="ms-2">Roles</span> 
+                                    </a>
+                                </li>    
+                                <li><hr class="dropdown-divider"></li>
+                                <!-- Cuando le usuario este autenticado nos mostrara las opciones salir con este helper auth -->
+                                @auth
+                                    
+                                    <div class="col-lg-12 text-center">
+                                        <form action="{{ route('logout') }}" method="POST">
+                                            @csrf
+
+                                            
+                                            <button type="submit" class="btn btn-outline-primary btn-sm text-uppercase fw-bolder rounded">
+                                                <i class='bx bx-log-out pe-1'></i>
+                                                Cerrar Sesion
+                                            </button>
+                                        </form>
+                                    </div>
+                                @endauth
+                            </ul>
+                        </li>                            
+                    </ul>   
+                    <!-- Profile -->
+
                 </div>
             </div>
         </nav>
     </header>
     <!------------Header------------>
 
+
+
     <!------------Menu principal------------>
     <main>
-        @yield('content')
+        <section>
+            @yield('content')
+        </section>
     </main>
     <!------------Menu principal------------>
+
+
 
     <!------------Footer------------>
     <footer class="bg-dark text-center text-lg-start text-white">            
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
             @yield('copyright')
             © {{ now()->year }} Copyright:
-            <a class="text-white" href="https:/lgbootstrap.com/">MDBootstrap.com</a>
+            <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
         </div>
     </footer>
     <!------------Footer------------>

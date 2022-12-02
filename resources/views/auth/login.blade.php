@@ -1,4 +1,4 @@
-@extends('layouts.profile')
+@extends('layouts.app')
 
 @section('title')
     Iniciar Sesión

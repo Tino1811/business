@@ -1,9 +1,11 @@
 @extends('layouts.profile')
 
 @section('title')
-    Dashboard
+    Admin
 @endsection
 
 @section('content')
-   <h1>Hola soy el muro </h1>
+    <section>
+        
+    </section>
 @endsection
