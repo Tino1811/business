@@ -13,7 +13,7 @@
                 <div class="row col-lg-12 col-md-12 ">
                     <div class="col-md-6 text-md-start col-sm-12 text-start">
                         <h1 class="titulo_h1 m-5">All in one SEO tool need to grow your business rapidly</h1>
-                        <p class="text_1 py-3 m-5"> 
+                        <p class="text_1 py-3 m-5 text-sm-center"> 
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam pariatur numquam dolorum vero. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum adipisci maiores delectus modi eos libero.
                         </p>
                         <a href="" class="btn btn-primary text-wrap mx-md-3 py-sm-3 px-sm-5 rounded-pill ms-5 my-3 fw-bolder">Free Quote</a>
@@ -30,6 +30,7 @@
         
         <!-- Second section - About us -->
         <section class="my-5">
+            <hr class="container">
             <div class="row col-lg-12 col-md-12">
                 <div class="col-lg-6 col-md-6">
                     <div class="position-relative m-5">
@@ -86,179 +87,212 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 text-center" style="background-color: orange">
-                    <img class="img-fluid rounded mt-5" src="{{ asset('img/profile.jpg') }}" alt="person_about" width="50%" height="50%">
-                    <h2 class="text-center">NAME PERSON ABOUT</h2>
+                <div class="col-lg-6 col-md-6 text-center">
+                    <img class="img-fluid rounded-circle my-4" src="{{ asset('img/profile.jpg') }}" alt="person_about" width="45%" height="45%">
+                    <h2 class="text-center fw-bold mb-3">NAME PERSON ABOUT</h2>
+                    <p class="px-4">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat error sapiente incidunt cupiditate dolorum assumenda in maxime? Aperiam rerum pariatur sapiente, deleniti at nam ab qui! Dolores ipsam neque impedit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo quia quis modi.
+                    </p>
                 </div>
             </div>
+            <hr class="container">
         </section>
-
+        
         <!-- End Second section - About us -->
 
         <!-- Third section - Cards --> 
-        <!-- <div class="row col-md-12 my-5" style="background-color: yellow"> -->
-        <div class="row col-lg-12 my-5 shadow-lg bg-body rounded">
-
-            <div class="col-lg-6 text-lg-start col-sm-6 text-start p-4">
-                <div class="card mb-3 p-3" style="max-width: 620px;">
-                    <div class="row g-0 px-3">
-                        <div class="col-md-4">
-                            <img src="{{ asset('img/principal/caja-fuerte.gif') }}" class="img-fluid rounded-start" alt="caja-fuerte" width="80%" height="80%">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                            <h5 class="card-title">Your safe </h5>
-                            <p class="card-text">
-                                This is a wider card with supporting text below as a natural lead-in to additional content.
-                            </p>
+        <section class="my-5">
+            <div class="container">
+                <div class="row col-lg-12 col-md-12 shadow-lg bg-body rounded-pill mb-5">
+                    
+                    <div class="col-lg-6 col-md-6 col-sm-6 text-start p-4">
+                        <div class="card p-3" style="max-width: 620px;">
+                            <div class="row g-0 px-3">
+                                <div class="col-md-4">
+                                    <img src="{{ asset('img/principal/caja-fuerte.gif') }}" class="img-fluid rounded-start" alt="caja-fuerte" width="80%" height="80%">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                    <h5 class="card-title">Your safe</h5>
+                                    <p class="card-text">
+                                        This is a wider card with supporting text below as a natural lead-in to additional content.
+                                    </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    
+                    <div class="col-lg-6 col-md-6 col-sm-6 text-start p-4">
+                        <div class="card p-3" style="max-width: 620px;">
+                            <div class="row g-0 px-3">
+                                <div class="col-md-4">
+                                    <img src="{{ asset('img/principal/bolsa-dinero.gif') }}" class="img-fluid rounded-start" alt="bolsa-dinero" width="80%" height="80%">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                    <h5 class="card-title">Investment</h5>
+                                    <p class="card-text">
+                                        This is a wider card with supporting text below as a natural lead-in to additional content. 
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="col-lg-6 col-md-6 col-sm-6 text-start p-4">
+                        <div class="card p-3" style="max-width: 620px;">
+                            <div class="row g-0 px-3">
+                                <div class="col-md-4">
+                                    <img src="{{ asset('img/principal/telefono.gif') }}" class="img-fluid rounded-start" alt="telefono" width="80%" height="80%">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                    <h5 class="card-title">Contact Us</h5>
+                                    <p class="card-text">
+                                        This is a wider card with supporting text below as a natural lead-in to additional content. 
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+        
+                    <div class="col-lg-6 col-md-6 col-sm-6 text-start p-4">
+                        <div class="card p-3" style="max-width: 620px;">
+                            <div class="row g-0 px-3">
+                                <div class="col-md-4">
+                                    <img src="{{ asset('img/principal/ingresos.gif') }}" class="img-fluid rounded-start" alt="ingresos" width="80%" height="80%">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                    <h5 class="card-title">Finance</h5>
+                                    <p class="card-text">
+                                        This is a wider card with supporting text below as a natural lead-in to additional content. 
+                                    </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>        
                 </div>
             </div>
-            
-            <div class="col-lg-6 text-lg-start col-sm-6 text-start p-4">
-                <div class="card mb-3 p-3" style="max-width: 620px;">
-                    <div class="row g-0 px-3">
-                        <div class="col-md-4">
-                            <img src="{{ asset('img/principal/bolsa-dinero.gif') }}" class="img-fluid rounded-start" alt="bolsa-dinero" width="80%" height="80%">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                            <h5 class="card-title">Investments</h5>
-                            <p class="card-text">
-                                This is a wider card with supporting text below as a natural lead-in to additional content. 
-                            </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-6 text-lg-start col-sm-6 text-start p-4">
-                <div class="card mb-3 p-3" style="max-width: 620px;">
-                    <div class="row g-0 px-3">
-                        <div class="col-md-4">
-                            <img src="{{ asset('img/principal/telefono.gif') }}" class="img-fluid rounded-start" alt="telefono" width="80%" height="80%">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                            <h5 class="card-title">Contact Us</h5>
-                            <p class="card-text">
-                                This is a wider card with supporting text below as a natural lead-in to additional content. 
-                            </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>    
-            </div>
-
-            <div class="col-lg-6 text-lg-start col-sm-6 text-start p-4">
-                <div class="card mb-3 p-3" style="max-width: 620px;">
-                    <div class="row g-0 px-3">
-                        <div class="col-md-4">
-                            <img src="{{ asset('img/principal/ingresos.gif') }}" class="img-fluid rounded-start" alt="ingresos" width="80%" height="80%">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                            <h5 class="card-title">Finance</h5>
-                            <p class="card-text">
-                                This is a wider card with supporting text below as a natural lead-in to additional content. 
-                            </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>        
-        </div>
+            <hr class="container">
+        </section>
+        
         <!-- End Third section - Cards -->
 
         <!-- Fourth section - Comentary -->
-        <div class="row col-lg-12 mb-5">
-            <div class="col-lg-3 col-sm-12 mt-3">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <i class='bx bxs-quote-left fs-1 mb-2'></i>                       
-                        <p class="card-text">
-                            This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                        </p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid rounded-circle" width="75px" height="75px" src="{{ asset('img/user.svg') }}" alt="" >
-                            <div class="ps-3">
-                                <h6 class="card-title">Client Name</h6>  
-                                <small>Profesion</small>
-                            </div>                        
+        <section class="my-5">
+            <div class="container">
+                <div class="row col-lg-12 mb-5">
+                    <div class="col-lg-4 col-md-6 col-sm-12 mt-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <i class='bx bxs-quote-left fs-1 mb-2'></i>                       
+                                <p class="card-text">
+                                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                                </p>
+                                <div class="d-flex align-items-center">
+                                    <img class="img-fluid rounded-circle" width="75px" height="75px" src="{{ asset('img/user.svg') }}" alt="" >
+                                    <div class="ps-3">
+                                        <h6 class="card-title">Client Name</h6>  
+                                        <small>Profesion</small>
+                                    </div>                        
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                            </div>
                         </div>
                     </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-sm-12 mt-3">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <i class='bx bxs-quote-left fs-1 mb-2'></i>                       
-                        <p class="card-text">
-                            This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                        </p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid rounded-circle" width="75px" height="75px" src="{{ asset('img/user.svg') }}" alt="" >
-                            <div class="ps-3">
-                                <h6 class="card-title">Client Name</h6>  
-                                <small>Profesion</small>
-                            </div>                        
+        
+                    <div class="col-lg-4 col-md-6 col-sm-12 mt-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <i class='bx bxs-quote-left fs-1 mb-2'></i>                       
+                                <p class="card-text">
+                                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                                </p>
+                                <div class="d-flex align-items-center">
+                                    <img class="img-fluid rounded-circle" width="75px" height="75px" src="{{ asset('img/user.svg') }}" alt="" >
+                                    <div class="ps-3">
+                                        <h6 class="card-title">Client Name</h6>  
+                                        <small>Profesion</small>
+                                    </div>                        
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                            </div>
                         </div>
                     </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-sm-12 mt-3">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <i class='bx bxs-quote-left fs-1 mb-2'></i>                       
-                        <p class="card-text">
-                            This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                        </p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid rounded-circle" width="75px" height="75px" src="{{ asset('img/user.svg') }}" alt="" >
-                            <div class="ps-3">
-                                <h6 class="card-title">Client Name</h6>  
-                                <small>Profesion</small>
-                            </div>                        
+        
+                    <div class="col-lg-4 col-md-6 col-sm-12 mt-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <i class='bx bxs-quote-left fs-1 mb-2'></i>                       
+                                <p class="card-text">
+                                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                                </p>
+                                <div class="d-flex align-items-center">
+                                    <img class="img-fluid rounded-circle" width="75px" height="75px" src="{{ asset('img/user.svg') }}" alt="" >
+                                    <div class="ps-3">
+                                        <h6 class="card-title">Client Name</h6>  
+                                        <small>Profesion</small>
+                                    </div>                        
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                            </div>
                         </div>
                     </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-sm-12 mt-3">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <i class='bx bxs-quote-left fs-1 mb-2'></i>                       
-                        <p class="card-text">
-                            This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                        </p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid rounded-circle" width="75px" height="75px" src="{{ asset('img/user.svg') }}" alt="" >
-                            <div class="ps-3">
-                                <h6 class="card-title">Client Name</h6>  
-                                <small>Profesion</small>
-                            </div>                        
+        
+                    <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <i class='bx bxs-quote-left fs-1 mb-2'></i>                       
+                                <p class="card-text">
+                                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                                </p>
+                                <div class="d-flex align-items-center">
+                                    <img class="img-fluid rounded-circle" width="75px" height="75px" src="{{ asset('img/user.svg') }}" alt="" >
+                                    <div class="ps-3">
+                                        <h6 class="card-title">Client Name</h6>  
+                                        <small>Profesion</small>
+                                    </div>                        
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                            </div>
                         </div>
                     </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
+                    <div class="col-lg-6 col-md-12 col-sm-12 mt-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <i class='bx bxs-quote-left fs-1 mb-2'></i>                       
+                                <p class="card-text">
+                                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                                </p>
+                                <div class="d-flex align-items-center">
+                                    <img class="img-fluid rounded-circle" width="75px" height="75px" src="{{ asset('img/user.svg') }}" alt="" >
+                                    <div class="ps-3">
+                                        <h6 class="card-title">Client Name</h6>  
+                                        <small>Profesion</small>
+                                    </div>                        
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </div> 
             </div>
-        </div> 
+        </section>
         <!-- End Fourth section - Comentary --> 
 
         <!-- Fifth section - Information -->
@@ -331,5 +365,9 @@
             
         </div> -->
         <!-- Fifth section - Information -->
+
+        <section>
+            
+        </section>
     </div>
 @endsection
