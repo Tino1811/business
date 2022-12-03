@@ -22,14 +22,20 @@ Route::get('/', function () {
     return view('principal');
 });
 
+// Register
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
 
+//Login
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
 
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
+// Dashboard
 Route::get('/muro', [PostController::class, 'index'])->name('post.index'); 
 
+// Category
 Route::get('/category', [CategoryController::class, 'index'])->name('category');
+Route::get('category/create', [CategoryController::class, 'create'])->name('category.create');
+Route::get('category/show', [CategoryController::class, 'show'])->name('category.show');
