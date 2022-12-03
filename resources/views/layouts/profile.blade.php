@@ -25,7 +25,7 @@
                     <!-- Dashboard -->
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="btn btn-outline-light mx-2" aria-current="page" autocomplete="off" href="#">
+                            <a class="btn btn-outline-light mx-2" aria-current="page" autocomplete="off" href="{{ route('post.index') }}">
                                 <i class='bx bx-home-alt'></i>
                                 Dashboard
                             </a>
@@ -44,7 +44,7 @@
 
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li>
-                                    <a class="dropdown-item" href="#">
+                                    <a class="dropdown-item" href="{{ route('category') }}">
                                         <i class='bx bx-category-alt'></i>
                                         <span class="ms-2">Categories</span> 
                                     </a>
