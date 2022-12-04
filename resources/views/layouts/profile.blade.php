@@ -50,7 +50,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="#">
+                                    <a class="dropdown-item" href="{{ route('products.index') }}">
                                         <i class='bx bx-box'></i>
                                         <span class="ms-2">Products</span> 
                                     </a>

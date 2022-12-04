@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RegisterController;
 
@@ -28,6 +29,7 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 //Login
 Route::get('/login', [LoginController::class, 'index'])->name('login');
+
 Route::post('/login', [LoginController::class, 'store']);
 
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
@@ -37,5 +39,14 @@ Route::get('/muro', [PostController::class, 'index'])->name('post.index');
 
 // Category
 Route::get('/category', [CategoryController::class, 'index'])->name('category');
+
 Route::get('category/create', [CategoryController::class, 'create'])->name('category.create');
+
 Route::get('category/show', [CategoryController::class, 'show'])->name('category.show');
+
+// Product
+Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+
+Route::get('products/create', [ProductController::class, 'create'])->name('products.create');
+
+Route::post('products', [ProductController::class, 'store'])->name('products.store');
