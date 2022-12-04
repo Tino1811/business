@@ -31,3 +31,8 @@
     min-height: 10vh;
 
 }
+
+/* Products */
+.text-area{
+    resize: none;
+}
