@@ -14,7 +14,15 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('products.index');
+        // almacenar todos los productos en la variable $products
+        $products = Product::orderBy('id', 'desc')->paginate();
+        // Aqui abajo visualizo el json en el navegador de mi base de datos
+        // return $products; 
+
+
+        // return view('products.index');
+        //Con el compact puedo utilizar mi variable almacenada $products en mi vista index
+        return view('products.index', compact('products'));
 
     }
 
@@ -77,7 +85,7 @@ class ProductController extends Controller
 
         $product->save();
 
-        return redirect()->route('products.index');
+        return redirect()->route('products.show', $product->id);
     }
 
     /**
@@ -86,9 +94,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Product $product)
     {
-        //
+        return view('products.show', compact('product'));
     }
 
     /**
@@ -97,9 +105,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Product $product)
     {
-        //
+        return view('products.edit', compact('product'));
     }
 
     /**
@@ -109,9 +117,18 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Product $product)
     {
-        //
+
+        $product->name_product = $request->name_product;
+        $product->precio_product = $request->precio_product;
+        $product->stock_product = $request->stock_product;
+        $product->peso_product = $request->peso_product;
+        $product->description_product = $request->description_product;
+
+        $product->save();
+        return redirect()->route('products.show', $product->id);
+
     }
 
     /**

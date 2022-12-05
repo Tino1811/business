@@ -35,7 +35,7 @@ Route::post('/login', [LoginController::class, 'store']);
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
 // Dashboard
-Route::get('/muro', [PostController::class, 'index'])->name('post.index'); 
+Route::get('dashboard', [PostController::class, 'index'])->name('post.index'); 
 
 // Category
 Route::get('/category', [CategoryController::class, 'index'])->name('category');
@@ -44,9 +44,15 @@ Route::get('category/create', [CategoryController::class, 'create'])->name('cate
 
 Route::get('category/show', [CategoryController::class, 'show'])->name('category.show');
 
-// Product
+// Products
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 
 Route::get('products/create', [ProductController::class, 'create'])->name('products.create');
 
 Route::post('products', [ProductController::class, 'store'])->name('products.store');
+
+Route::get('products/{product}', [ProductController::class, 'show'])->name('products.show');
+
+Route::get('products/{product}/edit', [ProductController::class, 'edit'])->name('products.edit');
+
+Route::put('products/{product}', [ProductController::class, 'update'])->name('products.update');

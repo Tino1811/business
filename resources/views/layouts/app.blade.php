@@ -18,8 +18,8 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light shadow p-3 mb-2 bg-body rounded">
             <div class="container-fluid">
                 <a class="navbar-brand col-md-3 col-lg-4 fw-bolder fs-4 text-uppercase" href="#">
-                    <img class="me-3" src="{{ asset('img/user.svg') }}" alt="" width="58" height="58">
-                    Empresa
+                    <img class="me-3" src="{{ asset('img/logo.png') }}" alt="" width="45%" height="45%">
+                    
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
