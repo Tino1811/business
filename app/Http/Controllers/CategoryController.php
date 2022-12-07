@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Categorie;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -14,7 +14,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('category.index');
+        $categories = Category::orderBy('id', 'desc')->paginate();
+        // $categories = Category::all();
+
+        return view('admin.categories.index', compact('categories'));
     }
 
     /**
@@ -24,7 +27,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categories.create');
     }
 
     /**
@@ -33,7 +36,7 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Category $category)
     {
         // 1. Consulta de datos por todo o por unidad 
         // dd($request);
@@ -43,19 +46,29 @@ class CategoryController extends Controller
         // 2. Validacion
         $this->validate($request, [
             'name_category' => 'required',
+            // 'slug_category' => 'unique:categories',
+            'slug_category' => '',
             'description_category' => 'required',
+
         ]);
         
 
         // 3. El id no se ingresa en el arreglo por que es autoincrementable y no es necesario
+
         // 4. La clase Hash::make se utiliza para hashear los passwords
-        Categorie::create([
-            'name_category' =>($request->name_category),
-            'description_category' =>($request->description_category),
-        ]);
+        // Category::create([
+        //     'name_category' =>($request->name_category),
+        //     'slug_category' =>($request->slug_category),
+        //     'description_category' =>($request->description_category),
+        // ]);
+
+        // 4.1 Creamos la categoria para que redireccione el metodo edit arriba en el punto 4 solo crea y redirecciona
+        $category = Category::create($request->all());
 
         // 5. Redireccionar
-        return redirect()->route('category');
+        return redirect()->route('admin.categories.index', $category)->with('info', 'La categoría se creó con éxito');
+
+        // return $request->all();
     }
 
     /**
@@ -64,9 +77,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Category $category)
     {
-        //
+        return view('admin.categories.show', compact('category'));
     }
 
     /**
@@ -75,9 +88,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Category $category)
     {
-        //
+        return view('admin.categories.edit', compact('category'));
     }
 
     /**
@@ -87,9 +100,19 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Category $category)
     {
-        //
+        $this->validate($request, [
+            'name_category' => 'required',
+            // 'slug_category' => "unique:categories",slug,$category->id,
+            'slug_category' => '',
+            'description_category' => 'required',
+
+        ]);
+
+        $category->update($request->all());
+
+        return redirect()->route('admin.categories.index', $category)->with('info', 'La categoría se actualizó con éxito');
     }
 
     /**
@@ -98,8 +121,10 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Category $category)
     {
-        //
+        $category->delete();
+
+        return redirect()->route('admin.categories.index');
     }
 }

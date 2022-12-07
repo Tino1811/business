@@ -5,5 +5,5 @@
 @endsection
 
 @section('content')
-    <h1>vista categorias</h1>
+    <h1>mostrar categorias</h1>
 @endsection
