@@ -11,6 +11,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- jQuery via npm link en (vite.config.js) -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
     <!------------Header------------>
@@ -44,7 +46,7 @@
 
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li>
-                                    <a class="dropdown-item" href="{{ route('category') }}">
+                                    <a class="dropdown-item" href="{{ route('admin.categories.index') }}">
                                         <i class='bx bx-category-alt'></i>
                                         <span class="ms-2">Categories</span> 
                                     </a>
