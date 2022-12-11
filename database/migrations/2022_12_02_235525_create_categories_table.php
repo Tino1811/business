@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name_category');
             $table->string('slug_category')->nullable();
             $table->longText('description_category');
+            $table->string('image_category')->nullable();
             $table->timestamps();
         });
     }

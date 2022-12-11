@@ -1,18 +1,20 @@
 @extends('layouts.profile')
 
 @section('title')
-    Products | Crear producto
+    Products | Editar producto
 @endsection
 
 @section('content')
     <div class="container">
         <div class="row">
-            <h4 class="text-start text-uppercase fw-bolder my-4">Crear nuevo producto</h4>
+            <h4 class="text-start text-uppercase fw-bolder my-4">Editar producto</h4>
         </div>
 
         {{-- enctype="multipart/form-data" esta clase sireve para poder subir imagenes desde el formulario --}}
-        <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data" novalidate>
+        <form action="{{ route('admin.products.update', $product) }}" method="POST" enctype="multipart/form-data" novalidate>
             @csrf
+
+            @method('PUT')
             <div class="row col-lg-12 mt-4 border border-2 rounded-3">
                 <div class="col-sm-8 my-3">
                     <label for="name_product" class="form-label fw-bolder text-secondary text-uppercase">
@@ -24,7 +26,7 @@
                         type="text" 
                         placeholder="Ingrese el nombre del producto"
                         class="mb-1 form-control @error('name_product') border border-danger @enderror" 
-                        value="{{ old('name_product') }}"
+                        value="{{ $product->name_product }}"
                     />
 
                     {{-- Error con la regla vaidate en store ProductController--}}
@@ -45,7 +47,7 @@
                         type="number" 
                         placeholder="Valor producto"
                         class="mb-1 form-control @error('precio_product') border border-danger @enderror" 
-                        value="{{ old('precio_product') }}"
+                        value="{{ $product->precio_product }}"
                     />
 
                     {{-- Error con la regla vaidate en store ProductController--}}
@@ -66,20 +68,21 @@
                         type="number" 
                         placeholder="Cantidad productos"
                         class="mb-1 form-control @error('stock_product') border border-danger @enderror" 
-                        value="{{ old('stock_product') }}"
+                        value="{{ $product->stock_product }}"
                     />
                 </div>
                 
                 <div class="col-lg-8 col-sm-6 my-3">
-                    <label for="featured" class="form-label fw-bolder text-secondary text-uppercase">
+                    <label for="image_product" class="form-label fw-bolder text-secondary text-uppercase">
                         Imagen
                     </label>
                     <input 
-                        id="featured"
-                        name="featured"
+                        id="image_product"
+                        name="image_product"
                         type="file"
                         placeholder="Ingrese el peso del producto"
                         class="mb-1 form-control" 
+                        value="{{ $product->image_product }}"
                     />
                 </div>
     
@@ -93,6 +96,7 @@
                         type="text" 
                         placeholder="Ingrese el peso del producto"
                         class="mb-1 form-control"
+                        value="{{ $product->peso_product }}"
                     />
                 </div>
                 
@@ -100,15 +104,14 @@
                     <label for="description_product" class="form-label fw-bolder text-secondary text-uppercase">
                         Descripción
                     </label>
-                    <textarea id="description_product" name="description_product" rows="3" class="text-area form-control mb-3"></textarea>
+                    <textarea id="description_product" name="description_product" rows="3" class="text-area form-control mb-3">{{$product->description_product}}</textarea>
 
                     <input 
                     type="submit" 
-                    value="GUARDAR" 
+                    value="ACTUALIZAR" 
                     class="btn btn-primary btn-block"
                     />
-
-                    <a class="btn btn-danger" href="{{ route('products.index') }}" role="button">
+                    <a class="btn btn-danger" href="{{ route('admin.products.index') }}" role="button">
                         REGRESAR
                     </a>
                 </div>

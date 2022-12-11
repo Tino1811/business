@@ -24,14 +24,14 @@
             </p>
             <p>
                 <strong>Imagen:</strong>
-                <img src="{{ $product->featured}} " alt="">{{ $product->featured}} 
+                <img src="{{ $product->image_product}} " alt="">{{ $product->image_product}} 
             </p>
             <div class="col-lg-12 col-sm-6 my-3">
-                <a class="btn btn-success" href="{{ route('products.edit', $product) }}" role="button">
+                <a class="btn btn-success" href="{{ route('admin.products.edit', $product) }}" role="button">
                     EDITAR
                 </a>
 
-                <a class="btn btn-danger" href="{{ route('products.index') }}" role="button">
+                <a class="btn btn-danger" href="{{ route('admin.products.index') }}" role="button">
                     REGRESAR
                 </a>
             </div>
