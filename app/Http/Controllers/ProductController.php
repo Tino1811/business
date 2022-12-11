@@ -22,7 +22,7 @@ class ProductController extends Controller
 
         // return view('products.index');
         //Con el compact puedo utilizar mi variable almacenada $products en mi vista index
-        return view('products.index', compact('products'));
+        return view('admin.products.index', compact('products'));
 
     }
 
@@ -33,7 +33,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('products.create');
+        return view('admin.products.create');
     }
 
     /**
@@ -52,7 +52,7 @@ class ProductController extends Controller
             'stock_product' => '',
             'peso_product' => '',
             'description_product' => '',
-            'featured' => '',
+            'image_product' => '',
         ]);
 
 
@@ -60,18 +60,18 @@ class ProductController extends Controller
 
 
         // GUARDADO DE IMAGENES CON EL METODO If
-        if  ( $request->hasFile('featured') ) {
+        if  ( $request->hasFile('image_product') ) {
             // crear variable file donde se va la imagen en la base de datos
-            $file = $request->file('featured');
+            $file = $request->file('image_product');
             // carpeta de destino donde se van a guardar las imagenes 
-            $destinationPath = 'img/featureds/';
+            $destinationPath = 'img/products/';
             // describimos el nombre del archivo con tiempo para que no se repita y sea diferente
             $filename = time() . '-' . $file->getClientOriginalName();
             // subimos el archivo moviendo la carpeta de destino ($destinationPath) y el nombre de archivo ($filename) con el reques del archivo que iniciamos
-            $uploadSucces = $request->file('featured')->move($destinationPath, $filename);
+            $uploadSucces = $request->file('image_product')->move($destinationPath, $filename);
 
-            // Guardar la imagen en la base de datos con la carpet de destino y el nombre del archivo
-            $product->featured = $destinationPath . $filename;
+            // Guardar la imagen en la base de datos con la carpeta de destino y el nombre del archivo
+            $product->image_product = $destinationPath . $filename;
         }
         
         $product->name_product = $request->name_product;
@@ -85,7 +85,7 @@ class ProductController extends Controller
 
         $product->save();
 
-        return redirect()->route('products.show', $product->id);
+        return redirect()->route('admin.products.show', $product->id);
     }
 
     /**
@@ -96,7 +96,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('products.show', compact('product'));
+        return view('admin.products.show', compact('product'));
     }
 
     /**
@@ -107,7 +107,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('products.edit', compact('product'));
+        return view('admin.products.edit', compact('product'));
     }
 
     /**
@@ -127,7 +127,7 @@ class ProductController extends Controller
         $product->description_product = $request->description_product;
 
         $product->save();
-        return redirect()->route('products.show', $product->id);
+        return redirect()->route('admin.products.show', $product->id);
 
     }
 
@@ -137,8 +137,10 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Product $product)
     {
-        //
+        $product->delete();
+
+        return redirect()->route('admin.products.index');
     }
 }
