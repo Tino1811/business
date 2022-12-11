@@ -1,7 +1,7 @@
 @extends('layouts.profile')
 
 @section('title')
-    Products | Crear Categoría
+    Categories | Crear Categoría
 @endsection
 
 @section('content')
@@ -10,6 +10,7 @@
             <h4 class="text-start text-uppercase fw-bolder my-4">Crear nueva categoría</h4>
         </div>
 
+        
         <div class="card">
             <div class="card-body">
 
@@ -30,6 +31,15 @@
                         {!! Form::text('slug_category', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el slug de la categoría', 'readonly']) !!}
 
                         @error('slug_category')
+                            <span class="text-danger">{{$message}}</span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group mb-3">
+                        {!! Form::label('image_category', 'Imagen') !!}
+                        {!! Form::file('image_category', null, ['class' => 'form-control']) !!}
+
+                        @error('image_category')
                             <span class="text-danger">{{$message}}</span>
                         @enderror
                     </div>

@@ -52,7 +52,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="{{ route('products.index') }}">
+                                    <a class="dropdown-item" href="{{ route('admin.products.index') }}">
                                         <i class='bx bx-box'></i>
                                         <span class="ms-2">Products</span> 
                                     </a>
@@ -119,11 +119,17 @@
                     <!-- Clients -->
 
                     <!-- Profile -->
-                    <ul class="navbar-nav">
-                        <li class="nav-item dropstart">
+                    <ul class="navbar-nav align-content-end">
+                        <li class="nav-item dropdown">
                             <a class="nav-link dropdown" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class='bx bxs-user-circle fs-1'></i>
+                                <i class='bx bxs-user-circle fs-5 me-1'></i>
+                                <strong>
+                                    {{ auth()->user()->first_name }} 
+                                    {{ auth()->user()->lastname }}
+                                </strong>
+                                
                             </a>
+
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li>
                                     <a class="dropdown-item" href="#">
@@ -143,6 +149,7 @@
                                         <span class="ms-2">Roles</span> 
                                     </a>
                                 </li>    
+
                                 <li><hr class="dropdown-divider"></li>
                                 <!-- Cuando le usuario este autenticado nos mostrara las opciones salir con este helper auth -->
                                 @auth
@@ -150,12 +157,12 @@
                                     <div class="col-lg-12 text-center">
                                         <form action="{{ route('logout') }}" method="POST">
                                             @csrf
-
-                                            
                                             <button type="submit" class="btn btn-outline-primary btn-sm text-uppercase fw-bolder rounded">
                                                 <i class='bx bx-log-out pe-1'></i>
                                                 Cerrar Sesion
                                             </button>
+                                            
+                                            
                                         </form>
                                     </div>
                                 @endauth
@@ -193,7 +200,7 @@
     <!-- Bootstrap JS Link --> 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js" integrity="sha384-q9CRHqZndzlxGLOj+xrdLDJa9ittGte1NksRmgJKeCV9DrM7Kz868XYqsKWPpAmn" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    
+
     <!-- Aqui se agrega el codigo script para la grafica.
     NOTA: Poner <script>CODIGO AQUI</script> por que no esta referenciado --> 
     @yield('scripts')
