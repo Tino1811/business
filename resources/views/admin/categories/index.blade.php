@@ -29,7 +29,7 @@
         <div class="row row-cols-1 row-cols-md-3 g-4 my-2 shadow p-3 mb-5 bg-body rounded">
             @foreach ($categories as $category)
                 <div class="col-md-4">
-                    <div class="card h-100">
+                    <div class="card card-frame h-100">
                         <h5 class="card-header text-center">
                             <a href="{{ route('admin.products.index') }}">{{ $category->name_category }}</a>  
                         </h5>

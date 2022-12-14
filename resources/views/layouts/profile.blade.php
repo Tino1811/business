@@ -18,7 +18,7 @@
     <!------------Header------------>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
+            <div class="container-fluid d-flex">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -119,58 +119,57 @@
                     <!-- Clients -->
 
                     <!-- Profile -->
-                    <ul class="navbar-nav align-content-end">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class='bx bxs-user-circle fs-5 me-1'></i>
-                                <strong>
-                                    {{ auth()->user()->first_name }} 
-                                    {{ auth()->user()->lastname }}
-                                </strong>
-                                
-                            </a>
-
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li>
-                                    <a class="dropdown-item" href="#">
-                                        <i class='bx bx-cog'></i>
-                                        <span class="ms-2">Settings</span> 
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">
-                                        <i class='bx bx-user'></i>
-                                        <span class="ms-2">Users</span> 
-                                    </a>
-                                </li>                            
-                                <li>
-                                    <a class="dropdown-item" href="#">
-                                        <i class='bx bx-task'></i>
-                                        <span class="ms-2">Roles</span> 
-                                    </a>
-                                </li>    
-
-                                <li><hr class="dropdown-divider"></li>
-                                <!-- Cuando le usuario este autenticado nos mostrara las opciones salir con este helper auth -->
-                                @auth
+                        <ul class="navbar navbar-nav justify-content-end">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class='bx bxs-user-circle fs-5 me-1'></i>
+                                    <strong>
+                                        {{ auth()->user()->first_name }} 
+                                        {{ auth()->user()->lastname }}
+                                    </strong>
                                     
-                                    <div class="col-lg-12 text-center">
-                                        <form action="{{ route('logout') }}" method="POST">
-                                            @csrf
-                                            <button type="submit" class="btn btn-outline-primary btn-sm text-uppercase fw-bolder rounded">
-                                                <i class='bx bx-log-out pe-1'></i>
-                                                Cerrar Sesion
-                                            </button>
-                                            
-                                            
-                                        </form>
-                                    </div>
-                                @endauth
-                            </ul>
-                        </li>                            
-                    </ul>   
+                                </a>
+    
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <i class='bx bx-cog'></i>
+                                            <span class="ms-2">Settings</span> 
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <i class='bx bx-user'></i>
+                                            <span class="ms-2">Users</span> 
+                                        </a>
+                                    </li>                            
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <i class='bx bx-task'></i>
+                                            <span class="ms-2">Roles</span> 
+                                        </a>
+                                    </li>    
+    
+                                    <li><hr class="dropdown-divider"></li>
+                                    <!-- Cuando le usuario este autenticado nos mostrara las opciones salir con este helper auth -->
+                                    @auth
+                                        
+                                        <div class="col-lg-12 text-center">
+                                            <form action="{{ route('logout') }}" method="POST">
+                                                @csrf
+                                                <button type="submit" class="btn btn-outline-primary btn-sm text-uppercase fw-bolder rounded">
+                                                    <i class='bx bx-log-out pe-1'></i>
+                                                    Cerrar Sesion
+                                                </button>
+                                                
+                                                
+                                            </form>
+                                        </div>
+                                    @endauth
+                                </ul>
+                            </li>                            
+                        </ul> 
                     <!-- Profile -->
-
                 </div>
             </div>
         </nav>

@@ -54,4 +54,4 @@ Route::put('products/{product}', [ProductController::class, 'update'])->name('ad
 Route::delete('products/{product}/destroy', [ProductController::class, 'destroy'])->name('admin.products.destroy');
 
 // Relation Category and Product
-Route::get('/', [Category_ProductController::class, 'index'])->name('admin.products.index');
+Route::get('/products', [Category_ProductController::class, 'index'])->name('admin.products.index');
