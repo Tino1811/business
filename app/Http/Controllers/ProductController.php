@@ -119,6 +119,14 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
+        if  ( $request->hasFile('image_product') ) {
+            $file = $request->file('image_product');
+            $destinationPath = 'img/products/';
+            $filename = time() . '-' . $file->getClientOriginalName();
+            $uploadSucces = $request->file('image_product')->move($destinationPath, $filename);
+
+            $product->image_product = $destinationPath . $filename;
+        }
 
         $product->name_product = $request->name_product;
         $product->precio_product = $request->precio_product;
